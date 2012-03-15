@@ -13,23 +13,24 @@ package components
 	import org.as3wavsound.WavSound;
 	import org.bytearray.micrecorder.encoder.WaveEncoder;
 	
-	public class CustomSound extends EventDispatcher {
+	public class CustomSoundNew extends Sound {
 		
 		private var _id:int;
 		private var _queueId:int;
 		private var _soundPath:String;
 		private var _offset:int;
 		var soundChannel:SoundChannel;
-		private var _sound:Sound;
+//		private var _sound:Sound;
 		private var encoder:WaveEncoder;
 		private var _loop=false;
 		private var sndTransform:SoundTransform;
 		private var _sndBytes:ByteArray;
 		
-		public function CustomSound(soundId:int,startOffset:int=0,stream:URLRequest=null, context:SoundLoaderContext=null){
+		public function CustomSoundNew(soundId:int=0,startOffset:int=0,stream:URLRequest=null, context:SoundLoaderContext=null){
+			
 			if(stream!=null){
-				_sound=new Sound(stream, context);
-				_sound.addEventListener(Event.COMPLETE, soundLoadedHandler);
+				super(stream, context);
+				this.addEventListener(Event.COMPLETE, soundLoadedHandler);
 				_soundPath=stream.url;
 			}
 			id=soundId;
@@ -40,16 +41,17 @@ package components
 			soundChannel.soundTransform = sndTransform;
 		}
 		
-		public function set sound(s:Sound):void{
-			_sound=s;
+		public function set sound(s:CustomSoundNew):void{
+			this=s;
 		}
 		
-		public function get sound():Sound{
-			return _sound;
+		public function get sound():CustomSound{
+			return this;
 		}
 		
 		public function set id(num:int):void{
 			_id=num;
+			
 		}
 		
 		public function get id():int{
@@ -128,7 +130,7 @@ package components
 			return player as Sound;
 		}
 		
-		public function extractByteArray():ByteArray{
+		public function extractByteArray():void{
 			var sndBytes:ByteArray=new ByteArray();
 			encoder = new WaveEncoder( 0.5 );
 			
@@ -136,13 +138,12 @@ package components
 			var startPos:Number = Math.floor ((offset/1000)*44100);
 			var lng:Number = sound.extract(sndBytes,extract);
 			
-//			soundBytes=sndBytes;
-			return sndBytes;
+			soundBytes=sndBytes;
 		}
 		
 		function soundLoadedHandler(e:Event):void{
 			sound.removeEventListener(Event.COMPLETE, soundLoadedHandler);
-//			extractByteArray();
+			extractByteArray();
 		}
 		
 		
