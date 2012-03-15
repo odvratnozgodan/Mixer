@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+	<head>	 	
+		<!-- Include support librarys first -->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+		<script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>	
+	</head>
+	<body>
+		<div id="fb-root"></div><!-- required div -->
+		<div id="flashContent1">
+			<h1>You need at least Flash Player 10.2 to view this page.</h1>
+			<p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>
+		</div>
+		
+		<div id="flashContent2">
+			<h1>You need at least Flash Player 10.2 to view this page.</h1>
+			<p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>
+		</div>
+		
+		<div id="flashContent3">
+			<h1>You need at least Flash Player 10.2 to view this page.</h1>
+			<p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>
+		</div>
+		<script type="text/javascript">
+			//This example uses dynamic publishing with swfObject. Login is handled in the swf
+						
+			//Note we are passing in attribute object with a 'name' property that is same value as the 'id'. This is REQUIRED for Chrome/Mozilla browsers			
+			swfobject.embedSWF("MixerRed.swf", "flashContent1", "768", "300", "10.2", null, null, null, {name:"flashContent1"}); 			
+		
+			swfobject.embedSWF("MixerBlue.swf", "flashContent2", "768", "300", "10.2", null, null, null, {name:"flashContent2"}); 	
+			
+			swfobject.embedSWF("MixerGreen.swf", "flashContent3", "768", "300", "10.2", null, null, null, {name:"flashContent3"}); 	
+		
+			function redirect(id,perms,uri) {
+				var params =
+				window.location.toString().slice(window.location.toString().indexOf('?'));
+				top.location = 'https://graph.facebook.com/oauth/authorize?client_id='+id+'&scope='+perms+'&redirect_uri='+uri+params;
+			}
+			
+			// JavaScript Document
+
+			window.fbAsyncInit = function() {
+				FB.init({
+					appId      : '349961031709801', // App ID
+					channelURL : '', // Channel File
+					status     : true, // check login status
+					cookie     : true, // enable cookies to allow the server to access the session
+					oauth      : true, // enable OAuth 2.0
+					xfbml      : true,  // parse XFBML
+					share: true
+				});
+				FB.Canvas.setSize({ height: 900});
+				
+				// Additional initialization code here
+			};
+				
+			// Load the SDK Asynchronously
+			(function(d){
+				 var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+				 js = d.createElement('script'); js.id = id; js.async = true;
+				 js.src = "//connect.facebook.net/en_US/all.js";
+				 d.getElementsByTagName('head')[0].appendChild(js);
+				// window.fbAsyncInit = function() {
+					//FB.Canvas.setSize({ height: 900});
+			//	}
+			}(document));
+			
+			function streamPublish(urlStr){
+			//alert("urlStr="+urlStr);
+				//showLoader(true);
+				FB.ui(
+				{
+					method: 'stream.publish',
+					message: 'Mixer',
+					target_id: '',
+					attachment: {
+						media: [{
+							"type": "mp3", 
+							"src": urlStr, 
+							"title": "Custom title", 
+							"artist": "Custom artist", 
+							"album": "Custom album"
+						}],						
+						name: 'Mixaj',
+						caption: 'Mixer Caption',
+						description: 'Mixer Description',
+						href: 'http://www.pimedius.com/temp/Mixer.html',
+					},
+					action_links: [
+						{ text: 'actionLinks_text', href: 'http://www.pimedius.com/temp/Mixer.html' }
+					],
+					user_prompt_message: 'userPrompt'
+				},
+				function(response) {
+					//showLoader(false);
+				});
+			
+			}
+			
+			function share()
+			{
+				 FB.ui({
+					method: 'stream.share',
+					u: 'http://fbrell.com/'
+				}, 
+					function(response) { //alert(response); 
+					}
+				);
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!--
+		The config block defines basic global parameters needed for button layout within the SWF. They are as follows:
+		
+		columns - How many columns of buttons there should be. Buttons are laid out left to right, top to bottom.
+		padding - Amount of padding, in pixels, around each button.
+		horizontal_align - Whether the button layout should be aligned horizontally, relative to the stage width.
+		vertical_align - Whether the button layout should be aligned vertically, relative to the stage height.
+		scale - A number between 0 & 1, 1 being 100% scale. This will scale all buttons as a group.
+	-->
+	<config>
+		<columns>6</columns>
+		<padding>15</padding>
+		<horizontal_align>true</horizontal_align>
+		<vertical_align>true</vertical_align>
+		<scale>1</scale>
+	</config>
+	<!--
+		Audio can be loaded into the SWF as either a sound or a loop. A sound plays a single time while a loop repeats until stopped.
+		Both <sound> and <loop> blocks share the same node structure. Which is as follows:
+		
+		title - A text string which will appear on the actual button. This should be kept short.
+		path - The path to the audio file. 
+		key - The keyboard key to trigger this audio. Can be numbers 0 - 9 or letters a - z. This is case insensitive ie. a & A are considered the same.
+		// The following are optional. If these are ommited then default values will be used.
+		volume - A number between 0 and 1. 0 being muted and 1 being maximum volume. [Default: 1]
+		panning - The left-to-right panning of the sound, ranging from -1 (full pan left) to 1 (full pan right). [Default: 0]
+		offset - Milliseconds to offset the beginning of the audio by. Used to remove silence from the beginning of a track to improve looping. [Default: 0]
+	-->
+	<sound>
+		<title></title>
+		<path>sounds/HipHop/a_conga.mp3</path>
+		<key>a</key>
+		<volume>1</volume>
+		<panning>0</panning>
+		<offset>20</offset>
+	</sound>
+	
+	<sound>
+		<title></title>
+		<path>sounds/HipHop/.mp3</path>
+		<key>s</key>
+		<volume>1</volume>
+		<panning>0</panning>
+		<offset>20</offset>
+	</sound>
+	
+	<sound>
+		<title></title>
+		<path>sounds/HipHop/.mp3</path>
+		<key>d</key>
+		<volume>1</volume>
+		<panning>0</panning>
+		<offset>20</offset>
+	</sound>
+	
+	<sound>
+		<title></title>
+		<path>sounds/HipHop/.mp3</path>
+		<key>f</key>
+		<volume>1</volume>
+		<panning>0</panning>
+		<offset>20</offset>
+	</sound>
+	
+	<sound>
+		<title></title>
+		<path>sounds/HipHop/.mp3</path>
+		<key>g</key>
+		<volume>1</volume>
+		<panning>0</panning>
+		<offset>20</offset>
+	</sound>
+	
+	<sound>
+		<title></title>
+		<path>sounds/HipHop/.mp3</path>
+		<key>h</key>
+		<volume>1</volume>
+		<panning>0</panning>
+		<offset>20</offset>
+	</sound>
+	
+	<loop>
+		<title></title>
+		<path>sounds/HipHop/.mp3</path>
+		<key>j</key>
+		<volume>1</volume>
+		<panning>0</panning>
+		<offset>20</offset>
+	</loop>
+	
+	<loop>
+		<title></title>
+		<path>sounds/HipHop/.mp3</path>
+		<key>k</key>
+		<volume>1</volume>
+		<panning>0</panning>
+		<offset>20</offset>
+	</loop>
+	
+	<loop>
+		<title></title>
+		<path>sounds/HipHop/.mp3</path>
+		<key>l</key>
+		<volume>1</volume>
+		<panning>0</panning>
+		<offset>20</offset>
+	</loop>
+	
+	<loop>
+		<title></title>
+		<path>sounds/HipHop/.mp3</path>
+		<key>b</key>
+		<volume>1</volume>
+		<panning>0</panning>
+		<offset>20</offset>
+	</loop>
+	
+	<loop>
+		<title></title>
+		<path>sounds/HipHop/.mp3</path>
+		<key>n</key>
+		<volume>1</volume>
+		<panning>0</panning>
+		<offset>20</offset>
+	</loop>
+	
+	<loop>
+		<title></title>
+		<path>sounds/HipHop/.mp3</path>
+		<key>m</key>
+		<volume>1</volume>
+		<panning>0</panning>
+		<offset>20</offset>
+	</loop>
+	
+		
+</root>

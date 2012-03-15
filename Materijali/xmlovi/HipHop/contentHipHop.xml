@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!--
+		The config block defines basic global parameters needed for button layout within the SWF. They are as follows:
+		
+		columns - How many columns of buttons there should be. Buttons are laid out left to right, top to bottom.
+		padding - Amount of padding, in pixels, around each button.
+		horizontal_align - Whether the button layout should be aligned horizontally, relative to the stage width.
+		vertical_align - Whether the button layout should be aligned vertically, relative to the stage height.
+		scale - A number between 0 & 1, 1 being 100% scale. This will scale all buttons as a group.
+	-->
+	<config>
+		<columns>6</columns>
+		<padding>15</padding>
+		<horizontal_align>true</horizontal_align>
+		<vertical_align>true</vertical_align>
+		<scale>1</scale>
+	</config>
+	<!--
+		Audio can be loaded into the SWF as either a sound or a loop. A sound plays a single time while a loop repeats until stopped.
+		Both <sound> and <loop> blocks share the same node structure. Which is as follows:
+		
+		title - A text string which will appear on the actual button. This should be kept short.
+		path - The path to the audio file. 
+		key - The keyboard key to trigger this audio. Can be numbers 0 - 9 or letters a - z. This is case insensitive ie. a & A are considered the same.
+		// The following are optional. If these are ommited then default values will be used.
+		volume - A number between 0 and 1. 0 being muted and 1 being maximum volume. [Default: 1]
+		panning - The left-to-right panning of the sound, ranging from -1 (full pan left) to 1 (full pan right). [Default: 0]
+		offset - Milliseconds to offset the beginning of the audio by. Used to remove silence from the beginning of a track to improve looping. [Default: 0]
+	-->
+	<sound>
+		<title>Whistle</title>
+		<path>sounds/q_fx12.mp3</path>
+		<key>q</key>
+		<volume>1</volume>
+		<panning>0</panning>
+		<offset>20</offset>
+	</sound>
+	<sound>
+		<title>Owl</title>
+		<path>sounds/w_fx11.mp3</path>
+		<key>w</key>
+		<volume>1</volume>
+		<panning>0</panning>
+		<offset>30</offset>
+	</sound>
+	<sound>
+		<title>Roar</title>
+		<path>sounds/e_fx10.mp3</path>
+		<key>e</key>
+		<volume>1</volume>
+		<panning>0</panning>
+		<offset>20</offset>
+	</sound>
+	<sound>
+		<title>Hit</title>
+		<path>sounds/r_fx9.mp3</path>
+		<key>r</key>
+		<volume>1</volume>
+		<panning>0</panning>
+		<offset>20</offset>
+	</sound>
+	<sound>
+		<title>Ring</title>
+		<path>sounds/t_fx8.mp3</path>
+		<key>t</key>
+		<volume>1</volume>
+		<panning>0</panning>
+		<offset>50</offset>
+	</sound>
+	<sound>
+		<title>Sick</title>
+		<path>sounds/z_fx7.mp3</path>
+		<key>z</key>
+		<volume>1</volume>
+		<panning>0</panning>
+		<offset>50</offset>
+	</sound>
+	<loop>
+		<title>Beat 1</title>
+		<path>sounds/a_beat01.mp3</path>
+		<key>a</key>
+		<volume>1</volume>
+		<panning>0</panning>
+		<offset>20</offset>
+	</loop>
+	<loop>
+		<title>Beat 2</title>
+		<path>sounds/s_beat02.mp3</path>
+		<key>s</key>
+		<volume>1</volume>
+		<panning>0</panning>
+		<offset>20</offset>
+	</loop>
+	<loop>
+		<title>Strum</title>
+		<path>sounds/d_strum.mp3</path>
+		<key>d</key>
+		<volume>1</volume>
+		<panning>0</panning>
+		<offset>50</offset>
+	</loop>
+	<loop>
+		<title>Bass</title>
+		<path>sounds/f_bass.mp3</path>
+		<key>f</key>
+		<volume>1</volume>
+		<panning>0</panning>
+		<offset>50</offset>
+	</loop>
+	<loop>
+		<title>Strings</title>
+		<path>sounds/g_strings.mp3</path>
+		<key>g</key>
+		<volume>1</volume>
+		<panning>0</panning>
+		<offset>50</offset>
+	</loop>
+	<loop>
+		<title>Voice</title>
+		<path>sounds/h_voice.mp3</path>
+		<key>h</key>
+		<volume>1</volume>
+		<panning>0</panning>
+		<offset>50</offset>
+	</loop>
+		
+</root>
